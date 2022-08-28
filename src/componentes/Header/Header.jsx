@@ -45,11 +45,9 @@ return (
  
    <div className="d-flex ">
       <a href="#Login"><BiLogIn className="HCarrito"/></a>
-     <a href="#Carrito"><TbShoppingCart className="HCarrito"/> </a>  {/*Cuando no tenga productos if */}
-     <a href="#Carrito"> <TbShoppingCartPlus className="HCarrito"/> </a> {/*cuando tenga productos*/}
-    <div className="Hcarritocount">
-          <p className="HColorP" >1</p> {/* aparce cuando hay productos y incremente en el total d productos*/}
-      </div>
+     <a href="#Carrito"><TbShoppingCart className="HCarrito"/> <span class="js-cart-widget-amount cart-widget-amount">0</span> </a>  {/*Cuando no tenga productos if */}
+    
+  
     </div>   
     </div>
 </nav>

@@ -11,7 +11,10 @@ import Menu from './componentes/Menu/Menu';
 function App() {
   return (
     <div className=''>
+      <header>
         <Header />
+      </header> 
+      <main>
         <Intro />
         <Menu/>
         <Carrito />
@@ -19,6 +22,7 @@ function App() {
         <Login />
         <Reserva />
         <Contacto />
+      </main> 
         <Footer />
     </div>
   );
