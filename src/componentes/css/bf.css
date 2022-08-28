@@ -1,0 +1,39 @@
+
+/* 
+
+body{
+    background-color: #f5ebd2;
+} */
+
+
+    /* background-color: #bf9d73;
+        color: #733641
+    }
+/* header{
+    background-color: #85333f;
+} */
+
+
+.carousel{
+    color: #85333f;
+}
+.ColorP{
+    color: #85333f;
+  font-size: large;
+  font-weight: 400;
+}
+
+.ColorS{
+  color: #bf9d73;
+}
+
+.carousel img{
+height: 60vh;
+width: 80vw;
+max-width: 1400px;
+margin:auto;
+}
+/* .fontl{
+  font-size: xx-large;
+  color: #bf9d73;
+} */

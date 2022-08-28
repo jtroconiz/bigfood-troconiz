@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  /* #f5ebd2  #bf9d73 */
+  body{
+    background-color: #f5ebdc;
+}
+
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+} */
+

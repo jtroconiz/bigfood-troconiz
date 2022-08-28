@@ -1,0 +1,20 @@
+
+.carousel{
+    color: #85333f;
+}
+.ColorP{
+    color: #85333f;
+  font-size: large;
+  font-weight: 400;
+}
+
+.ColorS{
+  color: #bf9d73;
+}
+
+.carousel img{
+height: 60vh;
+width: 60vw;
+max-width: 1300px;
+margin:auto;
+}

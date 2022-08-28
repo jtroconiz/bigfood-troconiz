@@ -1,0 +1,33 @@
+.header1{
+    background-color: #85333f;  
+    letter-spacing: 2.5px;
+    color: #bf9d73;
+    }
+.header1 img {
+        width: 220px;
+        margin-left: 30px;
+      }
+     .nav-link {
+      color: #bf9d73;
+       font-weight: 600;
+       font-size: x-large;
+  }
+  
+  .HCarrito{
+    font-size: xx-large;
+    color: #bf9d73;
+  }
+  .HColorP{
+    color: #85333f;
+    font-size: large;
+    font-weight: 400;
+  }
+
+  .Hcarritocount{
+    border-radius: 20px;
+      background-color: #bf9d73;
+     width:  20px;
+     height: 30px;
+     text-align: center;
+    }
+    
