@@ -1,8 +1,13 @@
 .ItemCount{
-    letter-spacing: 20px;
+    text-align: center;
 margin-right: 50%;
 }
 .btn-bf{
     background-color: #85333f;
     color: #f5ebdc;
+}
+
+.ItemCoun{
+    letter-spacing: 20px;
+    text-align: center;
 }
