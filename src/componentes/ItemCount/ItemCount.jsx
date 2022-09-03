@@ -1,25 +1,24 @@
 import React, {useState} from "react";
-import Item from "../ItemListContainer/ItemList/Item/Item";
-import ItemList from "../ItemListContainer/ItemList/ItemList";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
 import './ItemCount.css' 
-
+// contador de productos llamado por item y renderizado en itemlistcontainer
 const ItemCount = ( props ) => {
 const [clicks, setClicks] = useState(1);
 const [itemStock, setItemStock] = useState(props.stock);
 const MySwal = withReactContent(Swal)
 
-// console.log(props.stock)
+
 console.log(itemStock)
     return(
         
         <div className="ItemCount">
            
             <div className="ItemCoun">
-                <button className="btn btn-secundary" role="button"
+                {/* funcion de invrementar el click */}
+                <button className="btn btn-secundary" 
                 onClick={ ( ) => { 
                     if ( clicks < itemStock   ) {
                         setClicks(clicks + 1);
@@ -28,8 +27,8 @@ console.log(itemStock)
                     }}>+</button>    
                 
                      <span>  {clicks} </span>
-
-                <button className="btn btn-secundary" role="button"
+                {/* funcion de decremtar el click */}
+                <button className="btn btn-secundary" 
                 onClick={ () => {
                     if (1 <= clicks )   {
                     setClicks(clicks - 1);
@@ -37,6 +36,7 @@ console.log(itemStock)
                         setClicks (clicks)
                     }}>-</button>
              </div>
+             {/* boton añade al carrito y disminuye el stock flotante */}
                  <button className="btn btn-bf"  
                 onClick={ () => {
                     if (clicks <= itemStock){
@@ -48,7 +48,7 @@ console.log(itemStock)
                         MySwal.fire({
                             title: <p>Se agoto el Stock</p>,
                             didOpen: () => {
-                              // Avso cuando se agota el stock
+                              // Aviso cuando se agota el stock y se quiere añadir en el carrito
                               MySwal.showLoading()
                                 
                             },
@@ -57,7 +57,7 @@ console.log(itemStock)
                     }}>Agregar al carrito    </button>   
 
                     <div>Unidades disponibles = {itemStock}</div>
-        {/* <Item stockonline={itemStock}/> */}
+       {/* llamada al itemStock que es el stock flotante para renderizarlo */}
         </div>
     );
 }

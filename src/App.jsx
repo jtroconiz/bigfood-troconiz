@@ -6,7 +6,7 @@ import Intro from './componentes/Intro/Intro';
 import Login from './componentes/Login/Login';
 import Carrito from './componentes/Carrito/Carrito';
 import Reserva from './componentes/Reserva/Reserva';
-import ItemList from './componentes/ItemListContainer/ItemList/ItemList';
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 
 
 
@@ -19,7 +19,7 @@ function App() {
       </header> 
       <main>
         <Intro />    
-       <ItemList/>
+        <ItemListContainer/>
         <Carrito />
         <Destacado />
         <Login />
