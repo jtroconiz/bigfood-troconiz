@@ -4,9 +4,12 @@ import Footer from './componentes/Footer.css/Footer';
 import Header from './componentes/Header/Header';
 import Intro from './componentes/Intro/Intro';
 import Login from './componentes/Login/Login';
-import Carrito from './componentes/Carrito/Carrito'
+import Carrito from './componentes/Carrito/Carrito';
 import Reserva from './componentes/Reserva/Reserva';
-import Menu from './componentes/Menu/Menu';
+import ItemList from './componentes/ItemListContainer/ItemList/ItemList';
+
+
+
 
 function App() {
   return (
@@ -15,13 +18,14 @@ function App() {
         <Header />
       </header> 
       <main>
-        <Intro />
-        <Menu/>
+        <Intro />    
+       <ItemList/>
         <Carrito />
         <Destacado />
         <Login />
         <Reserva />
         <Contacto />
+      
       </main> 
         <Footer />
     </div>
