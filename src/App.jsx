@@ -7,28 +7,31 @@ import Login from './componentes/Login/Login';
 import Carrito from './componentes/Carrito/Carrito';
 import Reserva from './componentes/Reserva/Reserva';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
 
 
 
 
 function App() {
   return (
-    <div className=''>
-      <header>
-        <Header />
-      </header> 
-      <main>
-        <Intro />    
-        <ItemListContainer/>
-        <Carrito />
+    <BrowserRouter >
+
+          <Header />
+        <Routes>
+         <Route exact path='/' element={<Intro />}/>
+         <Route exact path='/menu' element={<ItemListContainer/> }/>
+         <Route exact path='/carrito' element={<Carrito />}/>
+         <Route exact path='/login' element={<Login />}/>
+         <Route exact path='/' element={<Intro />}/>
+         <Route exact path='/reserva' element={ <Reserva />}/>    
+        </Routes>
         <Destacado />
-        <Login />
-        <Reserva />
-        <Contacto />
-      
-      </main> 
-        <Footer />
-    </div>
+          <Contacto />
+          <Footer />
+          
+
+    
+    </BrowserRouter>
   );
 }
 
