@@ -11,7 +11,7 @@ const [itemStock, setItemStock] = useState(props.stock);
 const MySwal = withReactContent(Swal)
 
 
-console.log(itemStock)
+
     return(
         
         <div className="ItemCount">

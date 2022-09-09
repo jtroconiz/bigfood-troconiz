@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Contacto = () => {
@@ -29,7 +30,7 @@ return (
           <li className="mb-1"><a className="ColorP text-decoration-none" Target="_blank" href="https://www.instagram.com/bigfood.ar/"><i  className="bi bi-instagram"></i> seguinos @bigfood.ar </a> <p>Cualquier duda escribinos por instagram y te responderemos a la brevedad</p> </li>
           <li className="mb-1"><a className="ColorP text-decoration-none" Target="_blank" href="mailto:bigfoodsdifital@bigfoods.com"><i class="bi bi-envelope-open-heart"></i>   bigsbooddigital@gmail.com </a>  </li>
           <br />
-          <li className="mb-1"><a className="ColorP text-decoration-none" Target="_blank" href=""><i class="bi bi-telephone-outbound"></i> 555555 </a>  </li>
+          <li className="mb-1"><a className="ColorP text-decoration-none" Target="_blank" href=""><i className="bi bi-telephone-outbound"></i> 555555 </a>  </li>
    
         </ul>
       </div>

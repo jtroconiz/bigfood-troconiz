@@ -26,6 +26,12 @@
     font-weight: 400;
   }
 
+  .dropdown-item{
+     color: #85333f;
+     list-style: none;
+     
+  }
+
   .Hcarritocount{
     border-radius: 20px;
       background-color: #bf9d73;
