@@ -1,0 +1,26 @@
+.card-m{
+    margin-left: 10%;
+}
+
+
+.TituloItem{
+    color: #85333f;
+    font-size:xx-large;
+    font-weight: 400;
+}
+.PrecioItem{
+    color: #85333f;
+    font-size: large;
+    font-weight: 400;
+    text-decoration: none;
+}
+.Descripcion{
+    font-size: x-large;
+}
+
+.imgDetail{
+    height: 500px;
+    width: 700px;
+}
+
+

@@ -10,7 +10,7 @@ const ItemList = ({items}) => {
                     {
                     items.map(item =>(
                         <li key={item.id} className="Menu row no-gutters mb-3" id={item.tipo}>
-                            <Item nombre={item.nombre} precio={item.precio} stock={item.stock} tipo={item.tipo}/>
+                            <Item nombre={item.nombre} precio={item.precio} stock={item.stock} tipo={item.tipo} id={item.id}/>
                         </li>
 
                     ))} 

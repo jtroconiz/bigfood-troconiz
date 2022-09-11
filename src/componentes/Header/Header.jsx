@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../Assets/img/favicon.png"
 import { TbShoppingCart } from 'react-icons/tb';
 import { BiLogIn } from 'react-icons/bi';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Header.css';
 
 
@@ -31,16 +31,18 @@ return (
   Menu
   </NavLink>
 
-  <ul class="dropdown-menu">
-  <li><NavLink className="dropdown-item" to="/menu">Todos los productos</NavLink></li>
-    <li><NavLink className="dropdown-item" to="/menu/entradas">Entradas</NavLink></li>
-    <li><NavLink className="dropdown-item" to="/menu/principales">Platos Principales</NavLink></li>
-    <li><NavLink className="dropdown-item" to="/menu/bebidas">Bebidas</NavLink></li>
-    <li><NavLink className="dropdown-item" to="/menu/detail">Detalle de 1 producto</NavLink></li>
-    {/* <li><a className="dropdown-item" href="#">Postres</a></li> */}
+  <ul className="dropdown-menu">
+
+
+<li><NavLink className="dropdown-item" to="/">Todos los productos</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/category/entradas">Entradas</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/category/principales">Platos Principales</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/category/desayunos">Desayunos</NavLink></li>
+    <li><NavLink className="dropdown-item" to="/category/bebidas">Bebidas</NavLink></li>
+  
   </ul>
 </li>           
-       
+
       </ul>
     </div>
  

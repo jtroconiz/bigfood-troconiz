@@ -1,3 +1,15 @@
+a{
+    text-decoration: none; 
+    color: #85333f;
+}
+a:hover{
+color:chocolate;
+}
+
+.card-tittle{
+    text-decoration: none; 
+    color: #85333f;
+}
 .TituloItem{
     color: #85333f;
     font-size: large;
@@ -7,9 +19,12 @@
     color: #85333f;
     font-size: smaller;
     font-weight: 400;
+    text-decoration: none;
 }
 
 li{
     list-style: none;
     margin-left: 10%;
+    text-decoration: none;
 }
+

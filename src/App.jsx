@@ -19,13 +19,12 @@ function App() {
 
         <Header />
           <Routes>
-            <Route exact path='/' element={<Intro />}/>
-            <Route exact path='/menu' element={<ItemListContainer/> }/>
-            <Route exact path='/menu/:categoria' element={<ItemListContainer/> }/>
-            <Route exact path='/menu/detail' element={<ItemDetailContainer/> }/>
+            <Route exact path='/' element={<ItemListContainer/> }/>            
+            <Route exact path='/category/:category' element={<ItemListContainer/> }/>
+            <Route exact path='/item/:itemId' element={<ItemDetailContainer/> }/>
             <Route exact path='/carrito' element={<Carrito />}/>
             <Route exact path='/login' element={<Login />}/>
-            <Route exact path='/' element={<Intro />}/>
+            {/* <Route exact path='/' element={<Intro />}/> */}
             <Route exact path='/reserva' element={ <Reserva />}/>    
           </Routes>
         <Destacado />

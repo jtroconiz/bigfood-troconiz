@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { useParams } from "react-router-dom";
 import { productos } from "../ItemListContainer/ItemListContainer"
 import ItemDetail from "./ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState({})
-    console.log(productos)
+    const [item, setItem] = useState({});
+    const {itemId} = useParams();
+    
     useEffect(()=>{
         const getItem = () => 
             new Promise((respuesta, reject)=>{
-                const producto = productos.find((prod) => prod.id === 1);            
-                 setTimeout(()=>{
-                    respuesta(producto)
-                    console.log(producto)
-                }, 1000);
+                const newProduct = productos.find(item=>item.id === parseInt(itemId));
+                setTimeout(()=>{
+                    respuesta(newProduct)
+                }, 2000);
             });
             getItem()
-           
             .then((info)=>{
-                
                 setItem(info)
             })
             .catch((error)=>{
-                console.log(error)
+                    console.log(error)
             })
-    }, [])
+            
+        }, [itemId])
+    console.log('itemID', item)
 return(
-<div>
-    <ItemDetail item={item}/>
-</div>
-
-
-
+<Fragment>
+<ItemDetail item={item}/>
+</Fragment>
 
 )
 
