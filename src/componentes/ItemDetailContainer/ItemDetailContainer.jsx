@@ -4,7 +4,7 @@ import { productos } from "../ItemListContainer/ItemListContainer"
 import ItemDetail from "./ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState({});
+    const [item, setItem] = useState([]);
     const {itemId} = useParams();
     
     useEffect(()=>{
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
                     console.log(error)
             })
             
-        }, [itemId])
+        }, [])
     console.log('itemID', item)
 return(
 <Fragment>

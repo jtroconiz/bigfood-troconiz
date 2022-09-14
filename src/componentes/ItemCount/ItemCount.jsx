@@ -1,16 +1,41 @@
 import React, {useState} from "react";
+import { useEffect } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
 import './ItemCount.css' 
 // contador de productos llamado por item y renderizado en itemlistcontainer
-const ItemCount = ( props ) => {
-const [clicks, setClicks] = useState(1);
-const [itemStock, setItemStock] = useState(props.stock);
+const ItemCount = ( item ) => {
+
+
+const [clicks, setClicks] = useState(parseInt(1));
+const [itemStock, setItemStock] = useState(item.stock);
 const MySwal = withReactContent(Swal)
+console.log(typeof(item.stock))
+console.log(item.stock)
+console.log('itemstck inicial',itemStock)
 
-
+    useEffect(()=>{
+        const getStock = () => 
+            new Promise((respuesta, reject)=>{
+                setTimeout(()=>{
+                    console.log(item.stock)
+                    respuesta(item.stock)
+                },);
+            });
+            getStock()
+            .then((info)=>{
+                setItemStock(info)
+                console.log('then',info)
+            })
+            .catch((error)=>{
+                    console.log(error)
+            })
+            
+        },[item.stock] )
+        console.log(typeof(itemStock))
+        console.log('fuera de la promise',itemStock)
 
     return(
         

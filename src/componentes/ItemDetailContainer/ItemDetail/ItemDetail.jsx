@@ -4,6 +4,7 @@ import './ItemDetail.css'
 
 const ItemDetail = ({item}) =>{
 
+
 console.log("itemdetail", item)
 return(
 <div className="col-md-10 card-m">

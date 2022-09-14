@@ -3,7 +3,7 @@ import ItemCount from "../../../ItemCount/ItemCount";
 
 import { Link } from "react-router-dom";
 
-const Item = ( {nombre, precio, stock, tipo, id} ) => {
+const Item = ( {nombre, precio, stock, id} ) => {
 // Item sera mapeado en Item count y renderizado en itemlistcontainer
  return(
     //  card de productos 
