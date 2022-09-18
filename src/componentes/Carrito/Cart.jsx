@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Carrito extends Component{
+class Cart extends Component{
 
 render() {
 
@@ -17,6 +17,6 @@ render() {
 }
 
 
-export default Carrito;
+export default Cart;
 
 

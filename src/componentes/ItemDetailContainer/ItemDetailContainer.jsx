@@ -23,8 +23,8 @@ const ItemDetailContainer = () => {
                     console.log(error)
             })
             
-        }, [])
-    console.log('itemID', item)
+        }, [itemId])
+   
 return(
 <Fragment>
 <ItemDetail item={item}/>

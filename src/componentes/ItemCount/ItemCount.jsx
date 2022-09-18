@@ -6,36 +6,33 @@ import withReactContent from 'sweetalert2-react-content'
 
 import './ItemCount.css' 
 // contador de productos llamado por item y renderizado en itemlistcontainer
-const ItemCount = ( item ) => {
+const ItemCount = ({stock, onAdd} ) => {
 
 
 const [clicks, setClicks] = useState(parseInt(1));
-const [itemStock, setItemStock] = useState(item.stock);
+const [itemStock, setItemStock] = useState(stock);
 const MySwal = withReactContent(Swal)
-console.log(typeof(item.stock))
-console.log(item.stock)
-console.log('itemstck inicial',itemStock)
 
-    useEffect(()=>{
+
+    useEffect(()=>{ 
         const getStock = () => 
             new Promise((respuesta, reject)=>{
                 setTimeout(()=>{
-                    console.log(item.stock)
-                    respuesta(item.stock)
+                 
+                    respuesta(stock)
                 },);
             });
             getStock()
             .then((info)=>{
                 setItemStock(info)
-                console.log('then',info)
+                
             })
             .catch((error)=>{
                     console.log(error)
             })
             
-        },[item.stock] )
-        console.log(typeof(itemStock))
-        console.log('fuera de la promise',itemStock)
+        },[stock] )
+       
 
     return(
         
@@ -67,7 +64,8 @@ console.log('itemstck inicial',itemStock)
                     if (clicks <= itemStock){
                         setItemStock(itemStock - clicks);
                         setClicks(1);
-                      
+                        onAdd(clicks)
+                       
                     }
                     else {
                         MySwal.fire({

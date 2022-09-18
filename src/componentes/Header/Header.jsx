@@ -48,7 +48,7 @@ return (
  
    <div className="d-flex ">
       <NavLink to="/Login"><BiLogIn className="HCarrito"/></NavLink>
-     <NavLink to="/carrito"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">0</span> </NavLink>  {/*Cuando no tenga productos if */}
+     <NavLink to="/cart"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">0</span> </NavLink>  {/*Cuando no tenga productos if */}
     
   
     </div>   
