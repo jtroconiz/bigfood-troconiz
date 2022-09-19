@@ -1,9 +1,11 @@
 import React from "react";
 import logo from "../../Assets/img/favicon.png"
-import { TbShoppingCart } from 'react-icons/tb';
-import { BiLogIn } from 'react-icons/bi';
+// import { TbFloatLeft, TbShoppingCart } from 'react-icons/tb';
+// import { BiLogIn } from 'react-icons/bi';
 import { NavLink } from "react-router-dom";
 import './Header.css';
+
+import Cart from "../Carrito/Cart";
 
 
 const Header = () => {
@@ -46,12 +48,7 @@ return (
       </ul>
     </div>
  
-   <div className="d-flex ">
-      <NavLink to="/Login"><BiLogIn className="HCarrito"/></NavLink>
-     <NavLink to="/cart"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">0</span> </NavLink>  {/*Cuando no tenga productos if */}
-    
-  
-    </div>   
+    <Cart/>
     </div>
 </nav>
 </div> 

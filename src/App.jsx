@@ -1,3 +1,4 @@
+import React from 'react';
 import Contacto from './componentes/Contacto/Contacto';
 import Destacado from './componentes/Destacado/Destacado';
 import Footer from './componentes/Footer.css/Footer';
@@ -9,31 +10,33 @@ import ItemListContainer from './componentes/ItemListContainer/ItemListContainer
 import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import Cart from './componentes/Carrito/Cart';
+import CartProvider from './Context/CartContext';
 
 
 
 
 function App() {
   return (
-    <BrowserRouter >
-
-        <Header />
-          <Routes>
-            <Route exact path='/' element={<ItemListContainer/> }/>            
-            <Route exact path='/category/:category' element={<ItemListContainer/> }/>
-            <Route exact path='/item/:itemId' element={<ItemDetailContainer/> }/>
-            <Route exact path='/cart' element={<Cart />}/>
-            <Route exact path='/login' element={<Login />}/>
-            {/* <Route exact path='/' element={<Intro />}/> */}
-            <Route exact path='/reserva' element={ <Reserva />}/>    
-          </Routes>
-        <Destacado />
-          <Contacto /> 
-         <Footer />
-          
 
     
-    </BrowserRouter>
+      <BrowserRouter >
+      <CartProvider>
+          <Header />
+            <Routes>
+              <Route exact path='/' element={<ItemListContainer/> }/>            
+              <Route exact path='/category/:category' element={<ItemListContainer/> }/>
+              <Route exact path='/item/:itemId' element={<ItemDetailContainer/> }/>
+              <Route exact path='/cart' element={<Cart />}/>
+              <Route exact path='/login' element={<Login />}/>
+              {/* <Route exact path='/' element={<Intro />}/> */}
+              <Route exact path='/reserva' element={ <Reserva />}/>    
+            </Routes>
+          <Destacado />
+            <Contacto /> 
+          <Footer />
+          </CartProvider> 
+      </BrowserRouter>
+    
   );
 }
 

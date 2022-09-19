@@ -1,20 +1,30 @@
-import React, { Component } from "react";
+import React,{useEffect, useState} from "react";
+import { NavLink } from "react-router-dom";
+import { BiLogIn } from 'react-icons/bi';
+import { TbFloatLeft, TbShoppingCart } from 'react-icons/tb';
+import { useCartContext } from "../../Context/CartContext";
+const Cart = ()=> {
 
-class Cart extends Component{
+    const {cart} = useCartContext();
+    const [total, setTotal] = useState(0);
 
-render() {
+    useEffect(() => {
+        let total_items = cart.reduce((total, item) => total+=item.cantidad, 0);
+        setTotal(total_items);
+    }, [cart]);
+    
 
     return(
-<div id="Carrito">
-
-<p>carrito</p>
-
+<div className="d-flex ">
+      <NavLink to="/Login"><BiLogIn className="HCarrito"/></NavLink>
+     <NavLink to="/cart"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">{total}</span> </NavLink>  {/*Cuando no tenga productos if */}
     
-</div>
+  
+    </div>  
     );
 
-}
-}
+
+    }
 
 
 export default Cart;

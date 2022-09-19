@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
    
 return(
 <Fragment>
-<ItemDetail item={item}/>
+<ItemDetail items={item}/>
 </Fragment>
 
 )
