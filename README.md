@@ -26,6 +26,10 @@ O también clonando el repositorio
 
 `$ git clone url`
 
+# Componentes
+
+npm install firebase
+
 # Para la puesta en marcha 
 
 `$ npm start`

@@ -1,33 +1,32 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../ItemListContainer/ItemListContainer"
 import ItemDetail from "./ItemDetail/ItemDetail";
+import Loading from "../Loading/Loading"
+import {doc, getDoc, getFirestore} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([]);
     const {itemId} = useParams();
-    
-    useEffect(()=>{
-        const getItem = () => 
-            new Promise((respuesta, reject)=>{
-                const newProduct = productos.find(item=>item.id === parseInt(itemId));
-                setTimeout(()=>{
-                    respuesta(newProduct)
-                }, 2000);
-            });
-            getItem()
-            .then((info)=>{
-                setItem(info)
-            })
-            .catch((error)=>{
-                    console.log(error)
-            })
-            
-        }, [itemId])
+    const [loading, setLoading] = useState(true);  
+
+//   Busqueda de base de datos firestore por id
+    useEffect(() => {
+        const db = getFirestore();
+        const response = doc(db, "productos", itemId);
+        getDoc(response).then((datag) => {
+            if (datag.exists()){
+                setItem({id:datag.id, ...datag.data()});
+                console.log({id:datag.id, ...datag.data()});
+                setLoading(false);
+            }
+        });
+    }, [itemId]);
    
 return(
 <Fragment>
-<ItemDetail items={item}/>
+
+{loading ? <Loading/> : <ItemDetail items={item}/> }
+
 </Fragment>
 
 )
