@@ -1,28 +1,26 @@
-import React,{useEffect, useState} from "react";
-import { NavLink } from "react-router-dom";
-import { BiLogIn } from 'react-icons/bi';
-import { TbFloatLeft, TbShoppingCart } from 'react-icons/tb';
+import React from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
+import CartWidget from "./ArrayCarrito/CartWidget";
+
 const Cart = ()=> {
-
-    const {cart} = useCartContext();
-    const [total, setTotal] = useState(0);
-
-    useEffect(() => {
-        let total_items = cart.reduce((total, item) => total+=item.cantidad, 0);
-        setTotal(total_items);
-    }, [cart]);
-    
-
+    const { cartTotal } = useCartContext();
+ 
     return(
-<div className="d-flex ">
-      <NavLink to="/Login"><BiLogIn className="HCarrito"/></NavLink>
-     <NavLink to="/cart"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">{total}</span> </NavLink>  {/*Cuando no tenga productos if */}
-    
-  
-    </div>  
-    );
 
+  <div className="container h-100 py-5">
+    <div className="row d-flex justify-content-center align-items-center h-100">
+      <div className="col-10">
+        {cartTotal() === 0 ? (
+            <Link to="/"> No tienes productos selecionados, Click para Ir al menu </Link>    
+            ) : (
+            <CartWidget/>
+        )}
+        </div>
+    </div>
+</div>
+
+    );
 
     }
 

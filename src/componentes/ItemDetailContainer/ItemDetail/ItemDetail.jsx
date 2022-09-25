@@ -1,4 +1,4 @@
-import React,  { } from "react";
+import React,  { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../../ItemCount/ItemCount";
 import './ItemDetail.css'
@@ -6,18 +6,15 @@ import { useCartContext } from "../../../Context/CartContext";
 
 const ItemDetail = ({items}) =>{
   
-
-  // const [goToCart, setGoToCart] = useState(false);
   const {addItem} = useCartContext()
- 
+  const [show, setShow] = useState(false)
+
   const onAdd = (quantity) => {
-    // setGoToCart(true)
+    setShow(true)
     addItem(items, quantity)
-    // console.log("item", addItem)
-    // console.log(addItem)
+   
   }
 
-// console.log("itemdetail", items)
 return(
 <div className="col-md-10 card-m">
   
@@ -27,18 +24,14 @@ return(
           <p className="card-text Descripcion">{items.descripcion}</p>
           <p className=" text-muted PrecioItem">{items.precio} ARS</p>
           <div>
-{/* {
 
-      goToCart
-      
-      ?  <div> */}
-      <ItemCount stock={items.stock} onAdd={onAdd}/>
-      <Link to='/cart'>Finalizar compra </Link>
-      {/* </div>
-      :
-      <ItemCount stock={items.stock} onAdd={onAdd}/>
-}               */}
+  {show === false ? (
 
+        <ItemCount stock={items.stock} onAdd={onAdd}/> 
+  ) : (
+    <Link to='/cart'>Finalizar compra </Link> 
+  )      
+  }     
           </div>
         </div>
         <div className="col-md-6 imgDetail">

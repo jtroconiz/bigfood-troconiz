@@ -1,14 +1,16 @@
 import React from "react";
 import logo from "../../Assets/img/favicon.png"
-// import { TbFloatLeft, TbShoppingCart } from 'react-icons/tb';
-// import { BiLogIn } from 'react-icons/bi';
+import { TbShoppingCart } from 'react-icons/tb';
+import { BiLogIn } from 'react-icons/bi';
 import { NavLink } from "react-router-dom";
 import './Header.css';
+import { useCartContext } from "../../Context/CartContext";
 
-import Cart from "../Carrito/Cart";
+
 
 
 const Header = () => {
+  const { cartTotal } = useCartContext();
 return (
 
 <div className="header1 ">
@@ -48,7 +50,8 @@ return (
       </ul>
     </div>
  
-    <Cart/>
+    <NavLink to="/Login"><BiLogIn className="HCarrito"/></NavLink>
+     <NavLink to="/cart"><TbShoppingCart className="HCarrito"/> <span className="js-cart-widget-amount cart-widget-amount">{cartTotal()}</span> </NavLink>  {/*Cuando no tenga productos if */}
     </div>
 </nav>
 </div> 

@@ -4,34 +4,18 @@ export const useCartContext = () => useContext(CartContext);
 
 const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([]);
-    // const addItem = (item, quantity) => {
-    //         if (isInCart(item.id)) {
-    //             setCart(
-    //                 cart.map((product) => {
-    //                     return product.id === item.id
-    //                         ? { ...product, quantity: product.quantity + quantity }
-    //                         : product;
-    //                 }),
-    //             );
-    //         } else {
-    //             setCart([...cart, { ...item, quantity}]);
-    //         }
-    //     };
+
     const addItem = (items, cantidad) => {
         if (isInCart(items.id)) {
             let producto = cart.find(x => x.id === items.id);
             cart[cart.indexOf(producto)].cantidad += cantidad;
             setCart([...cart]);
-            console.log("item existente en el cart", cart)
+            
         } else {
             setCart([...cart,  {...items, cantidad:cantidad}]);
-            console.log("new item al cart", cart)
+           
         }}
-
-
       
-        console.log("Array Carrito", cart)
-
         const clear = () => {
             setCart([]); 
         }
@@ -40,39 +24,35 @@ const CartProvider = ({children}) =>{
             return cart.find(product=> product.id === id);
         }
      
-
-        const removeItem = (id) => setCart(cart.filter(product => product.id !== id ));
+        const removeItem = (id) => setCart(cart.filter(items => items.id !== id ));
         const cartTotal = () => {
-            return cart.reduce((total, item) => total+=item.cantidad, 0);
-        }
-        console.log(cartTotal)
-    
-        // const addItem = (item, cantidad) => {
-        //     if (isInCart(item.id)) {
-        //         setCart(cart.map(product =>{
-        //             return product.id === item.id ? { ...product, quantity: product.quantity + quantity} : product
-        //         }));
-        //     } else {
-        //         setCart([...cart,  {...item, quantity}]);
-        //     }}
-    
+            const copia = [...cart];
+            let count = 0
+             copia.forEach((items) => {
+                count = count + items.cantidad;            
+        });
+        return count;
+    };
+
+    const costTotal = () => {
+        const copia = [...cart];
+        let cost = 0
+         copia.forEach((items) => {
+            cost = cost + (items.cantidad * items.precio);            
+    });
+    return cost;
+};
 
 
-        // const newCart = cart.filter(producto => propuctos.id !== item.id);
-        //     newCart.push({ ...item, quantity: newQuantity});
-        //     setCart(newCart)
-        //     console.log("carrito", cart) 
-
-
-
-  
 return(
     <CartContext.Provider value={{
         clear,
         isInCart,
         removeItem,
         addItem,
-        cart
+        cartTotal,
+        costTotal,
+        cart,
     }}>
         {children}
     </CartContext.Provider>
