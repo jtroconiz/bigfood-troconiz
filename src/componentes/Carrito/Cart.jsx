@@ -15,7 +15,7 @@ const Cart = ()=> {
             <Link to="/"> 
   <h3> Tu carrito está vacío </h3 >
  <h4> ¿No sabés qué comer? ¡Nuestros platos te esperan! </h4>
- <p>Click para seguir comprando </p> </Link>    
+ <p>Clickea para seguir comprando </p> </Link>    
             ) : (
             <CartWidget/>
         )}
