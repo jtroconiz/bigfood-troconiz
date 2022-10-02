@@ -17,7 +17,7 @@ return (
     </div>
 
     <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li className="ms-3"><a className="text-muted" target="_blank" href="https://jtd.com.ar/">Desarrollado por JTD?</a></li>
+      <li className="ms-3"><a className="text-muted" target="_blank"   rel="noreferrer" href="https://jtd.com.ar/">Desarrollado por JTD</a></li>
     </ul>
   </footer>
 </div>

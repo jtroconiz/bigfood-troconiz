@@ -37,3 +37,9 @@ margin:auto;
   font-size: xx-large;
   color: #bf9d73;
 } */
+
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}

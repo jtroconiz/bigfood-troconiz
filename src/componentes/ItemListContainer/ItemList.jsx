@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import Item from "./Item/Item"
+import Item from "./Item"
 import './ItemList.css'
 
 const ItemList = ({items}) => {

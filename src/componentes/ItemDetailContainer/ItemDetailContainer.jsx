@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail/ItemDetail";
+import ItemDetail from "./ItemDetail";
 import Loading from "../Loading/Loading"
-import {doc, getDoc, getFirestore} from "firebase/firestore";
+import {collection, doc, getDoc} from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([]);
@@ -11,12 +12,11 @@ const ItemDetailContainer = () => {
 
 //   Busqueda de base de datos firestore por id
     useEffect(() => {
-        const db = getFirestore();
-        const response = doc(db, "productos", itemId);
-        getDoc(response).then((datag) => {
+        const itemCollection = collection(db, "productos");
+        const ref = doc(itemCollection, itemId);
+        getDoc(ref).then((datag) => {
             if (datag.exists()){
                 setItem({id:datag.id, ...datag.data()});
-                console.log({id:datag.id, ...datag.data()});
                 setLoading(false);
             }
         });

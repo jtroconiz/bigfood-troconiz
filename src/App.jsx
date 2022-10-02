@@ -11,6 +11,8 @@ import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import Cart from './componentes/Carrito/Cart';
 import CartProvider from './Context/CartContext';
+import Checkout from './componentes/Carrito/Checkout';
+import Historia from './componentes/Historia/Historia';
 
 
 
@@ -30,8 +32,10 @@ function App() {
               <Route exact path='/login' element={<Login />}/>
               {/* <Route exact path='/' element={<Intro />}/> */}
               <Route exact path='/reserva' element={ <Reserva />}/>    
+              <Route exact path='/checkout' element={ <Checkout />}/> 
             </Routes>
           <Destacado />
+            <Historia/>
             <Contacto /> 
           <Footer />
           </CartProvider> 
