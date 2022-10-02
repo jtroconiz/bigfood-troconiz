@@ -50,7 +50,7 @@ return(
           <input  type="text"
                 className="form-control" 
                 name="nombre"
-                pattern="[a-z]{2,20}"
+                pattern="[a-z,A-Z]{2,20}"
                 value={nombre}
                 onChange={handleNombre}
                 required/>
@@ -60,7 +60,7 @@ return(
           <label>Apellido</label>
           <input  type="text"
                 name="apellido"
-                pattern="[a-z]{2,20}"
+                pattern="[a-z,A-Z]{2,20}"
                 value={apellido}
                 onChange={handleApellido}
                 required
