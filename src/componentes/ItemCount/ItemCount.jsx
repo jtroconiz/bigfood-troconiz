@@ -6,11 +6,11 @@ import withReactContent from 'sweetalert2-react-content'
 import './ItemCount.css' 
 // contador de productos llamado por item y renderizado en itemlistcontainer
 const ItemCount = ({stock, onAdd} ) => {
+    
+    const [clicks, setClicks] = useState(parseInt(1));
+    const [itemStock, setItemStock] = useState(stock);
+    const MySwal = withReactContent(Swal)
 
-
-const [clicks, setClicks] = useState(parseInt(1));
-const [itemStock, setItemStock] = useState(stock);
-const MySwal = withReactContent(Swal)
 
 
     useEffect(()=>{ 

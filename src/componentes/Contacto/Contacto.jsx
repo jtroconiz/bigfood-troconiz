@@ -11,7 +11,7 @@ return (
    
     <div className="row justify-content-md-center">
   
-      <div className="col-4 col-md" id="Contachref">
+      <div className="col-4 col-md" id="Contacto">
         <h5>Ubicacion</h5>
         <ul className="list-unstyled text-small">
           <li className="mb-1"><a target="_blank" rel="noreferrer" className="" href="https://g.page/big-food-palermo?share">Malabia 1893, CABA Argentina <p>Plaza Armenia</p></a></li>
@@ -36,9 +36,8 @@ return (
           <li className="mb-1"><a  target="_blank" rel="noreferrer"className="ColorP text-decoration-none"   href="https://www.instagram.com/bigfood.ar/"><i className="bi bi-telephone-outbound"></i> 555555 </a>  </li>
    
         </ul>
+        </div>
       </div>
-     
-    </div>
     </div>
 )
 }

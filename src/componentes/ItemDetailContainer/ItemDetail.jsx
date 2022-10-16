@@ -4,17 +4,18 @@ import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 import { useCartContext } from "../../Context/CartContext";
 
+
 const ItemDetail = ({items}) =>{
   
-  const {addItem} = useCartContext()
-  const [show, setShow] = useState(false)
+  const {addItem} = useCartContext();
+  const [show, setShow] = useState(false);
+  
 
   const onAdd = (quantity) => {
     setShow(true)
     addItem(items, quantity)
-   
   }
-
+  
 return(
 <div className="col-md-10 card-m">
   

@@ -3,7 +3,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const Item = ( {nombre, precio, stock, id} ) => {
+const Item = ( {nombre, precio, id} ) => {
 // Item sera mapeado en Item count y renderizado en itemlistcontainer
  return(
     //  card de productos 
@@ -17,7 +17,8 @@ const Item = ( {nombre, precio, stock, id} ) => {
         </Link>
       </div>
        
-      {/* <div className="col-md-4 ">
+
+      {/* Luego de la entrega se activa <div className="col-md-4 ">
       <ItemCount stock={stock}/> 
       </div> */}
     </div>

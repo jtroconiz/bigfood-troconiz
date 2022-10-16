@@ -6,7 +6,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebaseConfig"
  
 const ItemListContainer = () => {
-    
+   
 
 const [item, setItem] = useState([]);
 const {category} = useParams();

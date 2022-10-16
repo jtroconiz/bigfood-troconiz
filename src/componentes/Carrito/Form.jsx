@@ -6,7 +6,7 @@ import { db } from "../../firebaseConfig";
 
 const Form = ({handleId}) => {
 
-    const {costTotal,  cart} = useCartContext();
+    const {costTotal,  cart, clear} = useCartContext();
     // constantes imput
     const handleNombre = (e) => setNombre(e.target.value); 
     const handleApellido = (e) => setApellido(e.target.value);
@@ -29,18 +29,13 @@ const Form = ({handleId}) => {
         const refOrden = collection(db, 'orders');
         addDoc(refOrden, orden).then((res) => {
             handleId(res.id);
-            console.log(res);
+       
+            clear();
         });
     };
 
 return(
-  // <div className="row g-3 justify-content-center">
-  // <div className="col-sm-4 align-self-center">
-  //   <label for="firstName" className="form-label">Nombre</label>
-  //   <input type="text" className="form-control" id="firstName" placeholder=""  required=""/>
- 
-  // </div>
-   
+
 <div className="col-md-5 col-lg-12  ">
 <h5 className="mb-3">Datos de contacto </h5>
     <form className="" action="" onSubmit={confirmar}>

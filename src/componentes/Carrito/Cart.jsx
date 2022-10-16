@@ -12,21 +12,17 @@ const Cart = ()=> {
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-10">
         {cartTotal() === 0 ? (
-            <Link to="/"> 
-  <h3> Tu carrito está vacío </h3 >
- <h4> ¿No sabés qué comer? ¡Nuestros platos te esperan! </h4>
- <p>Clickea para seguir comprando </p> </Link>    
-            ) : (
-            <CartWidget/>
-        )}
-        </div>
+            <Link to="/menu"> 
+          <h3> Tu carrito está vacío </h3 >
+          <h4> ¿No sabés qué comer? ¡Nuestros platos te esperan! </h4>
+          <p>Clickea para seguir comprando </p> </Link>    
+            ) : (<CartWidget/>)}
+      </div>
     </div>
-</div>
+  </div>
 
     );
-
     }
-
 
 export default Cart;
 

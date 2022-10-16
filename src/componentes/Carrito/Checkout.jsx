@@ -7,6 +7,7 @@ const Checkout = () =>{
 
     const handleId = (numeroDeOrden) =>{
         setOrderId(numeroDeOrden);
+        
     };
     if (orderID){
         return (

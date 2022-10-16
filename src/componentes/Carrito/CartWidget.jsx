@@ -42,10 +42,10 @@ const CartWidget = ()=> {
             </div>
         </div>      
         <div className="d-flex flex-row-reverse mt-3">
-        <Link to="/checkout" > <button className="btn btn-bf"  > Finalizar compra</button> </Link> 
+          <Link to="/checkout" > <button className="btn btn-bf"  > Finalizar compra</button> </Link> 
         </div>
         <div className="d-flex flex-row-reverse mt-3">
-        <Link to="/" > <button className="btn btn-bf"  > Continuar comprando</button> </Link> 
+          <Link to="/" > <button className="btn btn-bf"  > Continuar comprando</button> </Link> 
         </div>
         <div className="d-flex flex-row-reverse mt-3">
             <button className="btn btn-bf" onClick={()=> clear()} > Vaciar el carrito</button>
@@ -53,12 +53,9 @@ const CartWidget = ()=> {
         
 
       {/* En un futuro agregar if de si ya esta logeado el usuario no mostrarlo */}
-       
-
     
-        
-</div>
-</div>
+    </div>
+  </div>
 );
 
 }
