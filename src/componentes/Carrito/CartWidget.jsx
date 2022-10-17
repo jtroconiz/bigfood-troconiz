@@ -45,7 +45,7 @@ const CartWidget = ()=> {
           <Link to="/checkout" > <button className="btn btn-bf"  > Finalizar compra</button> </Link> 
         </div>
         <div className="d-flex flex-row-reverse mt-3">
-          <Link to="/" > <button className="btn btn-bf"  > Continuar comprando</button> </Link> 
+          <Link to="/menu" > <button className="btn btn-bf"  > Continuar comprando</button> </Link> 
         </div>
         <div className="d-flex flex-row-reverse mt-3">
             <button className="btn btn-bf" onClick={()=> clear()} > Vaciar el carrito</button>

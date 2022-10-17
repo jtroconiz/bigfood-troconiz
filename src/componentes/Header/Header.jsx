@@ -28,6 +28,11 @@ return (
             <li className="nav-item">
               <a className="nav-link" href="#Contacto">Contacto</a>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link " to="/reserva" >Reserva</NavLink>
+            </li>
+
+           
 
             <li className="dropdown">
                 <NavLink className="btn  dropdown-toggle nav-link" to="/menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</NavLink>
